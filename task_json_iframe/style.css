@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header_div {
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+}
+
+#nav_div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* Ensures equal spacing */
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+
+/* Remove button styling */
+.nav_item {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    border: none; /* Removes border */
+    background: none; /* Removes background */
+    color: black; /* Default text color */
+}
+
+.nav_item:hover {
+    text-decoration: underline; /* Adds a hover effect */
+}
+
+.content_div {
+    width: 80%;
+    padding: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
