@@ -25,7 +25,7 @@ for (let key in works) {
     projectLink.onclick = function () {
         contentFrame.src = works[key].url;
     };
-
     navDiv.appendChild(projectLink); // Add to the navigation panel
+
 }
 
