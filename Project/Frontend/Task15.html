@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random</title>
+    </head>
+    <body>
+        <div id ="container_div">
+            <h2>Random Number Generator</h2>
+            <input type="number" id="start" placeholder="Enter min value">
+            <input type="number" id="end" placeholder="Enter max value">
+            <button onclick="generateRandom()">Generate</button>
+            <div id="result"></div>
+        </div>
+        <script>
+
+
+            //let x = Math.random();
+            //console.log(x);
+
+            //let y = Math.floor(10 * Math.random());
+            //console.log(y);
+
+
+            const colors = ["red", "blue", "yellow", "orange"];
+            let idx = 0;
+            function generateRandom() {
+                let start = parseInt(document.getElementById("start").value);
+                let end = parseInt(document.getElementById("end").value);
+                let randomNum = Math.floor(Math.random() * (end - start)) + start;
+                
+                if (start > end) {
+                    document.getElementById("result").innerText = "Invalid range!";
+                    return;
+                }
+
+
+                document.getElementById("result").innerText = "Random number: " + randomNum;
+                document.getElementById("result").style = "color : "+ colors[idx];
+                idx = (idx + 1) % colors.length;
+            }
+
+            function clear_everything() {
+                document.getElementById("container_div").innerHTML = "<h1>Vanished!</h1>";
+                setTimeout(restoreContent,5000);
+            }
+           
+            
+            function restoreContent() {
+                document.getElementById("container_div").innerHTML = originalContent;
+            }
+            
+            setTimeout(clear_everything,5000);
+            
+
+
+        </script>
+    </body>
+</html>

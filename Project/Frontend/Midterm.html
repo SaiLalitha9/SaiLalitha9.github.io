@@ -1,0 +1,271 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Creative Tasks Layout</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f5;
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+            }
+
+            .wrapper {
+                width: calc(100% - 1px);
+                margin: 0.5px;
+            }
+
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 15px 30px;
+                background-color: white;
+                border: 2px solid #ccc;
+                border-radius: 25px;
+            }
+            .logo-container {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .logo-container img {
+                width: 40px;
+                height: 40px;
+            }
+            .logo-text {
+                font-size: 24px;
+                font-weight: bold;
+                color: #333;
+            }
+
+            .nav {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            }
+            .nav a {
+                text-decoration: none;
+                font-size: 16px;
+                color: #555;
+            }
+            .nav .box {
+                padding: 8px 15px;
+                border: 2px solid #007bff;
+                border-radius: 20px;
+                font-weight: bold;
+            }
+
+            .body-container {
+                flex-grow: 1;
+                background-color: white;
+                border: 2px solid #ccc;
+                border-radius: 25px;
+                display: flex;
+                gap: 20px;
+                padding: 30px;
+                padding-left: 50px; /* Five spaces = roughly 50px */
+            }
+
+            .left-side {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            h1 {
+                font-size: 28px;
+                margin-bottom: 10px;
+            }
+            h3 {
+                font-size: 18px;
+                margin-bottom: 15px;
+                color: #555;
+                padding-bottom: 30px; /* Three spaces = 30px */
+            }
+            h5 {
+                font-size: 14px;
+                color: #666;
+                line-height: 1.6;
+                margin-bottom: 20px; /* Two spaces = 20px */
+            }
+
+            .buttons {
+                display: flex;
+                gap: 20px;
+            }
+            .buttons .btn {
+                padding: 10px 30px;
+                font-size: 16px;
+                border: 2px solid #007bff;
+                border-radius: 20px;
+                text-align: center;
+                cursor: pointer;
+            }
+            .btn.learn-more {
+                background-color: white;
+                color: #007bff;
+            }
+            .btn.trial {
+                background-color: #007bff;
+                color: white;
+            }
+
+            .right-side {
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .thumbnail-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 106px);
+                grid-template-rows: repeat(2, 106px);
+                gap: 15px;
+            }
+            .thumbnail {
+                width: 106px;
+                height: 106px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: 14px;
+                text-align: center;
+                border: 1px solid #555;
+            }
+            .thumbnail:hover {
+            transform: scale(1.1);
+            transition: 0.3s;
+            }
+            .thumbnail:nth-child(1) { background-color: green; }
+            .thumbnail:nth-child(2) { background-color: orange; }
+            .thumbnail:nth-child(3) { background-color: violet; }
+            .thumbnail:nth-child(4) { background-color:  royalblue; }
+            .thumbnail:nth-child(5) { background-color: red; }
+            .thumbnail:nth-child(6) { background-color:  lightblue; }
+
+            footer {
+                background-color: white;
+                border: 2px solid #ccc;
+                border-radius: 25px;
+                padding: 15px 30px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+            .footer-icons {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .icon {
+                font-size: 24px;
+                text-decoration: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background-color: #f0f0f5;
+                color: #333;
+                transition: all 0.3s ease;
+            }
+            .icon:hover {
+                background-color: #007bff;
+                color: white;
+            }
+            footer {
+                background-color: white;
+                border: 2px solid #ccc;
+                border-radius: 25px;
+                padding: 15px 30px;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .footer-icons {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+            .icon img {
+                width: 40px;
+                height: 40px;
+            }
+        </style>
+    </head>
+    <body>
+
+    <!-- Header -->
+    <div class="wrapper">
+        <header>
+            <div class="logo-container">
+                <img src="resources/brand_logo.png" alt="Brand Logo">
+                <span class="logo-text">CreativeSites</span>
+            </div>
+            <nav class="nav">
+                <a href="#">Service</a>
+                <a href="#">Design</a>
+                <a href="#">Pricing</a>
+                <a href="#" class="box">About</a>
+                <a href="#" class="box">Contact Us</a>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Body -->
+    <div class="wrapper body-container">
+        <div class="left-side">
+            <h1>Responsive Sites</h1>
+            <h3>With the best quality and pricing</h3>
+            <h5>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum
+            </h5>
+            <div class="buttons">
+                <div class="btn learn-more">Learn More</div>
+                <div class="btn trial">Trial</div>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="thumbnail-grid">
+                <div class="thumbnail">Project<br>Thumbnail 1</div>
+                <div class="thumbnail">Project<br>Thumbnail 2</div>
+                <div class="thumbnail">Project<br>Thumbnail 3</div>
+                <div class="thumbnail">Project<br>Thumbnail 4</div>
+                <div class="thumbnail">Project<br>Thumbnail 5</div>
+                <div class="thumbnail">Project<br>Thumbnail 6</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="wrapper">
+        <footer>
+            <div class="footer-icons">
+                <a href="#" class="icon"><img src="resources/facebook.png" alt="Facebook"></a>
+                <a href="#" class="icon"><img src="resources/twitter.png" alt="Twitter"></a>
+                <a href="#" class="icon"><img src="resources/instagram.png" alt="Instagram"></a>
+                <a href="#" class="icon"><img src="resources/linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </footer>
+    </div>
+
+    </body>
+    </html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>String Operation</title>
+    </head>
+    <body>
+        <input placeholder="Input Text" id="inputField" oninput="updateOutput()"/>
+        <input placeholder="Output Text" id="outputField" disabled />
+
+    <script>
+        function updateOutput() {
+            let inputText = document.getElementById("inputField").value;
+            document.getElementById("outputField").value = inputText.toUpperCase();
+        }
+    </script>
+    </body>
+</html>

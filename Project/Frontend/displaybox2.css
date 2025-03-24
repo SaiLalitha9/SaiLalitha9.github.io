@@ -1,0 +1,36 @@
+.three {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+}
+
+
+.word {
+    display: flex;
+    gap: 10px;
+}
+
+
+.letter {
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+.letter:hover {
+    color: #fff;
+}
+
+
+.letter:hover {
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}

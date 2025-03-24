@@ -1,0 +1,26 @@
+.content_head{
+    width:800px;
+    background-color: aquamarine;
+    text-align: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.content_div{
+    background-color: rgb(158, 158, 201);
+    margin-bottom:20px;
+    margin: 10px;
+    border-radius: 10px;
+    margin-left:310px;
+    margin-right:310px;
+    text-align: center;
+    padding:100px;
+}
+
+.btn_div{
+    display: block;
+    width:200px;
+    text-align: center;
+    margin: 0 auto;
+}

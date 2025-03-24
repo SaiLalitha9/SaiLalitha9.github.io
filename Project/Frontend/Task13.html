@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Info</title>
+    </head>
+    <body>
+        <h3>Enter your details below:</h3>
+
+        <input type="text" id="name" placeholder="Name"><br><br>
+        <input type="text" id="s_id" placeholder="Student ID"><br><br>
+        <input type="text" id="dob" placeholder="Year of Birth"><br><br>
+        <input type="text" id="fav_color" placeholder="Favorite Color"><br><br>
+
+        <button onclick="insertInfo()">Insert Info</button>
+        <button onclick="showLatestInfo()">Show Updated Info</button>
+        <button onclick="showAllInfo()">Show All Info</button>
+
+        <h3>Student Information:</h3>
+        <div id="demo_div"></div>
+
+        <script>
+            let students = []; // Array to store multiple student entries
+
+            function insertInfo() {
+                let student = {
+                    name: document.getElementById("name").value,
+                    s_id: document.getElementById("s_id").value,
+                    dob: document.getElementById("dob").value,
+                    fav_color: document.getElementById("fav_color").value
+                };
+
+                students.push(student); // Add student to the array
+                
+                // Clear input fields after insertion
+                document.getElementById("name").value = "";
+                document.getElementById("s_id").value = "";
+                document.getElementById("dob").value = "";
+                document.getElementById("fav_color").value = "";
+            }
+
+            function showLatestInfo() {
+                if (students.length === 0) {
+                    document.getElementById("demo_div").innerHTML = "No information available. Please insert info first.";
+                    return;
+                }
+
+                let latest = students[students.length - 1]; // Get the latest student entry
+                document.getElementById("demo_div").innerHTML =  
+                    "Hello, This is " + latest.name + ". My Student ID is " + latest.s_id + 
+                    ", I was born in " + latest.dob + ", and my favorite color is " + latest.fav_color + ".";
+            }
+
+            function showAllInfo() {
+                if (students.length === 0) {
+                    document.getElementById("demo_div").innerHTML = "No information available. Please insert info first.";
+                    return;
+                }
+
+                let info = "";
+                for (let i = 0; i < students.length; i++) {
+                    let student = students[i];
+                    info += "Hello, This is " + student.name + ". My Student ID is " + student.s_id + 
+                            ", I was born in " + student.dob + ", and my favorite color is " + student.fav_color + ".<br><br>";
+                }
+
+                document.getElementById("demo_div").innerHTML = info;
+            }
+        </script>
+    </body>
+</html>

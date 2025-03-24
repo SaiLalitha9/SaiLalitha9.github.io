@@ -1,0 +1,27 @@
+.header_div{
+    width:800px;
+    background-color: aquamarine;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.content_div{
+    background-color: rgb(158, 158, 201);
+    margin-bottom:20px;
+    text-align: center;
+    font-size: large;
+    margin: 10px;
+    border-radius:10px;
+    margin-left: 310px;
+    margin-right: 310px;
+    padding:20px;
+}
+
+.btn_div{
+    display: block;
+    width:200px;
+    text-align: center;
+    margin: 0 auto;
+}

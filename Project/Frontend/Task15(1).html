@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+<body>
+    
+    <label for="dob"></label>
+    <input type="text" id="dob" placeholder="MM/DD/YYYY" maxlength="10" oninput="calculateAge()">
+    <p id="result"></p>
+
+    <script>
+        function calculateAge() {
+            let userDob = document.getElementById("dob").value;
+            if (userDob.length !== 10) {
+                document.getElementById("result").innerText = "";
+                return;
+            }
+
+            let dobParts = userDob.split('/');
+            let mm = parseInt(dobParts[0]);
+            let dd = parseInt(dobParts[1]);
+            let yyyy = parseInt(dobParts[2]);
+
+            let dob = new Date(yyyy, mm - 1, dd);
+            let today = new Date();
+            let age = today.getFullYear() - dob.getFullYear();
+            let monthDiff = today.getMonth() - dob.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < dob.getDate())) {
+                age--;
+            }
+
+            document.getElementById("result").innerText = 'Your are'+'${age}(s) years' ;
+        }
+    </script>
+</body>
+</html>

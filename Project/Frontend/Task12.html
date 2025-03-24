@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <head>
+            <title>Sum with Loop</title>
+        </head>
+    </head>
+    <body>
+        <input id ="input_a" placeholder="Enter A"/>
+        <input id ="input_b" placeholder="Enter B"/>
+        <button onclick="calculate();">Sum</button>
+
+        <div id="demo_div">
+            The sum is: <span id="output_span"></span>
+        </div>
+
+        <script>
+            const colors = ["red", "blue", "yellow", "orange"];
+            let idx = 0;
+            function calculate() {
+                let a = parseInt(document.getElementById("input_a").value);
+                let b = parseInt(document.getElementById("input_b").value);
+                let sum = 0;
+                let i = a;
+                do {
+                    sum += i;
+                    i++;
+                } while (i <= b);
+
+
+                
+                document.getElementById("output_span").innerText = sum;
+                document.getElementById("demo_div").style = "color : "+ colors[idx];
+                idx = (idx + 1) % colors.length;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice Layout</title>
+        <style>
+            /* Basic reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Header Styles */
+            .header_div {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                background-color: #f1f1f1;
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between; /* To align the left and right items */
+                z-index: 1000;
+            }
+
+            #logo_div {
+                display: flex;
+                gap: 10px;
+                align-items: center;
+            }
+
+            #logo_div button {
+                padding: 10px;
+                background-color: #ddd;
+                border: none;
+                cursor: pointer;
+            }
+
+            /* Align the remaining buttons to the right */
+            #no_border_div,
+            #round_border_div {
+                display: flex;
+                gap: 10px;
+                align-items: right;
+            }
+
+            /* Right section of the header (text buttons) */
+            #no_border_div button,
+            #round_border_div button {
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+                background-color: #ddd;
+            }
+
+            #round_border_div button {
+                border-radius: 20px;
+            }
+
+            /* Body Styles */
+            #body_container {
+                display: flex;
+                margin-top: 100px; /* To push body down below the fixed header */
+                padding: 20px;
+                gap: 20px;
+            }
+
+            #left_container {
+                flex: 1;
+            }
+
+            #left_container h1,
+            #left_container h2 {
+                margin-bottom: 10px;
+            }
+
+            #left_div {
+                margin-bottom: 20px;
+            }
+
+            #button_container button {
+                margin: 5px;
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+                background-color: #ddd;
+            }
+
+            /* Right container */
+            #right_container {
+                flex: 1;
+                background-color: #f4f4f4;
+                padding: 10px;
+                text-align: center;
+            }
+
+            /* Footer Styles */
+            #Footer_container {
+                background-color: #f1f1f1;
+                padding: 10px 20px;
+                position: relative;
+                margin-top: 20px;
+                text-align: left;
+            }
+
+            #Footer_container button {
+                margin: 5px;
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+                background-color: #ddd;
+            }
+
+            /* To make the body content scrollable */
+            body {
+                font-family: Arial, sans-serif;
+                overflow-x: hidden; /* Prevent horizontal scroll */
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+            }
+
+            #body_container {
+                flex: 1;
+                overflow-y: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header_div">
+            <div id="logo_div">
+                <button>Logo</button>
+                <button>Company Name</button>
+            </div>
+            <div id="no_border_div">
+                <button>Text Button</button>
+                <button>Text Button</button>
+                <button>Text Button</button>
+            </div>
+            <div id="round_border_div">
+                <button>Text Button</button>
+                <button>Text Button</button>
+            </div>
+        </div>
+
+        <div id="body_container">
+            <div id="left_container">
+                <h1>Large Title</h1>
+                <h2>Sub Title</h2>
+                <div id="left_div">
+                    <p>Regular Text Area</p>
+                </div>
+                <div id="button_container">
+                    <button>Text Button</button>
+                    <button>Text Button</button>
+                </div>
+            </div>
+            <div id="right_container">
+                <p>Space for something visual</p>
+            </div>
+        </div>
+
+        <div id="Footer_container">
+            <button>Text Button</button>
+            <button>Text Button</button>
+            <button>Text Button</button>
+            <button>Text Button</button>
+        </div>
+    </body>
+</html>

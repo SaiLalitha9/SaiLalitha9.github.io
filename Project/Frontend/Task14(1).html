@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Info</title>
+        <style>
+            body {
+                text-align: center;
+                font-family: Arial, sans-serif;
+            }
+            h1 {
+                text-align: center;
+            }
+            .buttons {
+                margin-top: 10px;
+            }
+            .input-container, .buttons button {
+                display: block;
+                margin: 5px auto;
+            }
+            input {
+                width: 200px;
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            button {
+                width: 220px;
+                padding: 8px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+            }
+            .insert-show {
+                background-color: #008CBA;
+                color: white;
+            }
+            .clear {
+                background-color: palevioletred;
+                color: white;
+            }
+            .search-container {
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Student</h1>
+
+        <div class="input-container">
+            <input type="text" id="name" placeholder="Name"><br>
+            <input type="text" id="s_id" placeholder="Student ID"><br>
+            <input type="text" id="dob" placeholder="Year of Birth"><br>
+            <input type="text" id="fav_color" placeholder="Favorite Color"><br>
+        </div>
+
+        <div class="buttons">
+            <button class="insert-show" onclick="insertInfo()">Insert Info</button>
+            <button class="clear" onclick="clearInputs()">Clear Inputs</button>
+        </div>
+        <div class="buttons">
+            <button class="insert-show" onclick="showAllInfo()">Show All Info</button>
+            <button class="clear" onclick="clearDisplay()">Clear Display</button>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search Info Here!!" oninput="searchInfo()">
+        </div>
+
+        <h3>Student Information:</h3>
+        <div id="demo_div"></div>
+
+        <script>
+            function Student(name, s_id, dob, fav_color) {
+                this.name = name;
+                this.s_id = s_id;
+                this.dob = dob;
+                this.fav_color = fav_color;
+            }
+
+            let students = []; 
+
+            function insertInfo() {
+                let student = new Student(
+                    document.getElementById("name").value,
+                    document.getElementById("s_id").value,
+                    document.getElementById("dob").value,
+                    document.getElementById("fav_color").value
+                );
+                students.push(student); 
+            }
+
+            function clearInputs() {
+                document.getElementById("name").value = "";
+                document.getElementById("s_id").value = "";
+                document.getElementById("dob").value = "";
+                document.getElementById("fav_color").value = "";
+            }
+
+            function showAllInfo() {
+                if (students.length === 0) {
+                    document.getElementById("demo_div").innerHTML = "No information available. Please insert info first.";
+                    return;
+                }
+                let info = "";
+                for (let i = 0; i < students.length; i++) {
+                    let student = students[i];
+                    info += "Hello, This is " + student.name + ". My Student ID is " + student.s_id + ", I was born in " + student.dob + ", and my favorite color is " + student.fav_color + ".<br><br>";
+                }
+                document.getElementById("demo_div").innerHTML = info;
+            }
+
+            function clearDisplay() {
+                document.getElementById("demo_div").innerHTML = "";
+            }
+
+            function searchInfo() {
+                let searchTerm = document.getElementById("search").value.toLowerCase();
+                if (students.length === 0) {
+                    document.getElementById("demo_div").innerHTML = "No information available. Please insert info first.";
+                    return;
+                }
+                let info = "";
+                for (let i = 0; i < students.length; i++) {
+                    let student = students[i];
+                    if (student.name.toLowerCase().includes(searchTerm) || student.s_id.toLowerCase().includes(searchTerm)) {
+                        info += "Hello, This is " + student.name + ". My Student ID is " + student.s_id + ", I was born in " + student.dob + ", and my favorite color is " + student.fav_color + ".<br><br>";
+                    }
+                }
+                if (info === "") {
+                    info = "No matching records found.";
+                }
+                document.getElementById("demo_div").innerHTML = info;
+            }
+        </script>
+    </body>
+</html>
